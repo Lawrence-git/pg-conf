@@ -1,17 +1,16 @@
 alter system set logging_collector=on;
 alter system set log_filename='postgresql-%Y-%m-%d_%H%M%S.log';
-alter system set log_duration=on;
-alter system set log_min_duration_statement=0;
+
 alter system set shared_preload_libraries = 'pg_stat_statements';
 --alter system set pg_stat_statements.track = all;
 
-alter system set log_min_duration_statement = 250ms
-alter system set log_checkpoints = on
-alter system set log_connections = on
-alter system set log_disconnections = on
-alter system set log_lock_waits = on
-alter system set log_temp_files = 0
-
+alter system set log_duration=on;
+alter system set log_min_duration_statement=0;
+alter system set log_checkpoints = on;
+alter system set log_connections = on;
+alter system set log_disconnections = on;
+alter system set log_lock_waits = on;
+alter system set log_temp_files = 0;
 
 select pg_reload_conf();
 
