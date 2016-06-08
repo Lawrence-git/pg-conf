@@ -29,3 +29,7 @@ show log_temp_files;
 
 show shared_preload_libraries;
 show pg_stat_statements.track;
+
+create table tt ( a int  );
+insert into tt (a) values (generate_series(1,1000));
+select count(*) from tt;
